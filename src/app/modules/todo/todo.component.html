@@ -1,0 +1,26 @@
+<div class="flex justify-center items-center w-full text-white" *ngIf="(todoObj.loading); else showTodos">
+  Loading...
+</div>
+<div class="flex justify-center items-center w-full text-white" *ngIf="(todoObj.error);">
+  {{todoObj.error | json}}
+</div>
+<ng-template #showTodos>
+  <div class="mt-[180px] text-white flex flex-col gap-4">
+    
+    <div class="mb-5">
+      <app-todo-filter></app-todo-filter>
+    </div>
+
+    <div class="flex gap-5 w-full justify-between" *ngFor="let todo of todoObj.todos">
+      <p>{{todo.title}}</p>
+      <span *ngIf="todo.completed; else notComplete">
+        <i class="bi bi-calendar-check"></i>
+      </span>
+      <ng-template #notComplete>
+        <span>
+          <i class="bi bi-calendar-x"></i>
+        </span>
+      </ng-template>
+    </div>
+  </div>
+</ng-template>

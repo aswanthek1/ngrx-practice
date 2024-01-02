@@ -1,11 +1,10 @@
 <header class="px-3 py-8 w-full shadow-lg bg-gray-700 fixed flex justify-between">
   <h4 class="text-4xl font-bold text-white" >Rxjs</h4>
   <div class="flex gap-4">
-    <a href="" class="text-xl font-bold text-white underline">Todo</a>
+    <a routerLink="todo" class="text-xl font-bold text-white underline">Todo</a>
     <h4 class="text-xl font-bold text-white" >Count {{count$ | async}}</h4>
   </div>
 </header>
 <div class="container_class bg-gray-800">
-  <app-counter></app-counter>
   <router-outlet></router-outlet>
 </div>

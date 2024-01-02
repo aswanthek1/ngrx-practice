@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState } from '../states/app.state';
-import { selectCount } from '../states/counter/counter.selector';
+import { AppState } from '../../states/app.state';
+import { selectCount } from '../../states/counter/counter.selector';
 import { AsyncPipe } from '@angular/common';
-import { decrement, increment, reset } from '../states/counter/counter.action';
+import { decrement, increment, reset } from '../../states/counter/counter.action';
 
 @Component({
   selector: 'app-counter',
