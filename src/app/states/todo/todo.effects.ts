@@ -11,6 +11,8 @@ export class TodosEffects {
     loadTodos$ = createEffect(() => 
       this.actions$.pipe(
         ofType(loadTodos),
+        // if there is any paramater for api calling you can pass it here like this comented version just below
+        // exhaustMap((param) => this.effectsService.getAllTodo(param).pipe(
         exhaustMap(() => this.effectsService.getAllTodo().pipe(
             map(todos => loadTodosSuccess({data:todos})),
             catchError((error) => of(loadTodosFailure({error:'[Todos API] Todos Loaded Error :'+ error})))

@@ -8,8 +8,3 @@ export const selectTodo = createSelector(
     selectTodoState,
     (state) =>  state
 )
-
-export const selectTodoItemType = createSelector(
-    selectTodoState,
-    (state) => state.todoType
-)
