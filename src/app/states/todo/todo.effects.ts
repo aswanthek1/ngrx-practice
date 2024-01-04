@@ -6,7 +6,9 @@ import { loadTodos, loadTodosFailure, loadTodosSuccess } from "./todo.action";
 
 
 
-@Injectable()
+@Injectable({
+  providedIn:'root'
+})
 export class TodosEffects {
     loadTodos$ = createEffect(() => 
       this.actions$.pipe(
